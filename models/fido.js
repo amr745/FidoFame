@@ -1,12 +1,11 @@
 const mongoose = require("mongoose")
 
 const fidoSchema = new mongoose.Schema({
-  Name: { type: String, required: true },
-  Image: { type: String, required: true },
-  Breed: { type: String, required: true },
-  Claim To Fame: { type: String, required: true },
-  Description: { type: String, required: true },
-  completed: Boolean,
+  name: { type: String, required: true },
+  image: { type: String, required: true },
+  breed: { type: String, required: true },
+  renown: { type: String, required: true },
+  description: { type: String, required: true },
 })
 
 const Fido = mongoose.model("Fido", fidoSchema)
