@@ -1,4 +1,5 @@
 # FidoFame
+
 ##Routes
 
 | Verb        | Path          | Action  | Used for    |
@@ -10,3 +11,14 @@
 | POST        | /fidofame     | create  | Adds new dogs to the database |
 | GET         | /fidofame/:id/edit | edit| Displays a space for users to update infomation about a dog  |
 | GET         | /fidofame/:id | show     | Displays information about individual dog |
+
+##Model: Fido
+| name | image   | breed | renown | description | deceased |
+| ----------- | -----------   | --------| ----------- | ----------- | ----------- |
+| ex: Terry | data:image/jpeg | Cairn Terrier | film | In the Wizard of Oz | True
+
+##Libraries Used
+express
+ejs
+method-override
+nodemon
