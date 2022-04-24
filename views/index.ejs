@@ -11,13 +11,13 @@
         <a href="/fidofame/new">Add a New Dog</a>
     </nav>
     <h1>Famous Dogs</h1>
-    <ul>
         <% fidos.forEach(fido => { %>
-        <li><%=fido.name; %></li>
-        <li>
-            <a href="/fidofame/<%=fido._id; %>"> <%=fido.name; %> </a>
-        </li>
-        <% }) %>
-      </ul>
+            <div class="Dog">
+                <%=fido.name %>
+                <a href="/fidofame/<%=fido._id; %>">
+                    <img class="image" src=<%=fido.image %> alt=<%=fido.name %>>
+                </a>
+            </div>
+            <% }) %>
 </body>
 </html>

@@ -4,11 +4,10 @@ const mongoose = require("mongoose");
 const Fido = require("./models/fido");
 const app = express();
 require("dotenv").config();
-// const DATABASE_URL = process.env.DATABASE_URL;
 
 // Middleware
 // Body parser middleware: give us access to req.body
-app.use(express.urlencoded({ extended: true }))
+app.use(express.urlencoded({ extended: true }));
 // app.use(bodyParser.urlencoded({ extended: false })); 
 // app.use(bodyParser.json());
 
@@ -40,9 +39,14 @@ app.post('/fidofame', (req, res) => {
     })
 });
 
-// app.get("/fidofame/new", (req, res) => {
-    // res.render("new.ejs")
-// });
+// Show
+app.get("/fidofame/:id", (req, res) => {
+    Fido.findById(req.params.id, (err, foundFido) => {
+        res.render("show.ejs", {
+            fido: foundFido
+        })
+    })
+});
 
 // Database Connection
 mongoose.connect(process.env.DATABASE_URL, {
@@ -52,11 +56,11 @@ mongoose.connect(process.env.DATABASE_URL, {
 
 // Database Connection Error/Success
 // Define callback functions for various events
-const db = mongoose.connection
+const db = mongoose.connection;
 db.on("error", (err) => console.log(err.message + " is mongo not running?"));
 db.on("connected", () => console.log("mongo connected"));
 db.on("disconnected", () => console.log("mongo disconnected"));
 
 // Listener
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`server is listning on port: ${PORT}`))
+app.listen(PORT, () => console.log(`server is listning on port: ${PORT}`));
