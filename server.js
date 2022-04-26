@@ -46,6 +46,25 @@ app.delete("/fidofame/:id", (req, res) => {
     })
 })
 
+// Update
+app.put("/fidofame/:id", (req, res) => {
+    if (req.body.deceased === "on") {
+      req.body.deceased = true
+    } else {
+      req.body.deceased = false
+    }
+    Fido.findByIdAndUpdate(
+        req.params.id,
+        req.body,
+        {
+          new: true,
+        },
+        (error, updatedBook) => {
+            res.redirect(`/fidofame/${req.params.id}`)
+        }
+    )
+})
+
 // Create
 app.post('/fidofame', (req, res) => {
     req.body.deceased = !!req.body.deceased;
