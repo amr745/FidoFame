@@ -4,14 +4,26 @@ const mongoose = require("mongoose");
 const Fido = require("./models/fido");
 const app = express();
 require("dotenv").config();
+// const path = require('path')
 
 // Middleware
 // Body parser middleware: give us access to req.body
 app.use(express.urlencoded({ extended: true }));
-// app.use(bodyParser.urlencoded({ extended: false })); 
-// app.use(bodyParser.json());
+app.use(express.static("public"));
 
 // Routes / Controllers
+
+// Seed
+const fidoSeed = require("./models/fidoSeed.js")
+
+app.get("/fidofame/seed", (req, res) => {
+  Fido.deleteMany({}, (error, allFido) => {})
+
+  Fido.create(fidoSeed, (error, data) => {
+    res.redirect("/fidofame")
+  })
+})
+
 // Index
 app.get("/fidofame", (req,res) => {
     Fido.find({}, (error, allFidos) => {
