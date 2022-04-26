@@ -7,6 +7,9 @@
     <title>Famous Dogs</title>
 </head>
 <body>
+    <nav>
+        <a href="/fidofame">Back to Famous Dogs</a>
+    </nav>
     <h1>Edit <%=fido.name%></h1>
     <form action="/fidofame/<%=fido._id%>?_method=PUT" method="POST">
         Name: <input type="text" name="name" value="<%=fido.name%>" /><br />

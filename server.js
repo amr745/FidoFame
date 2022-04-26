@@ -1,10 +1,9 @@
 // Dependencies
 const express = require("express");
 const mongoose = require("mongoose");
-const Fido = require("./models/fido");
+const methodOverride = require("method-override");
 const app = express();
 require("dotenv").config();
-const methodOverride = require("method-override")
 
 // Middleware
 // Body parser middleware: give us access to req.body
@@ -13,88 +12,8 @@ app.use(express.static("public"));
 app.use(methodOverride("_method"))
 
 // Routes / Controllers
-
-// Seed
-const fidoSeed = require("./models/fidoSeed.js")
-
-app.get("/fidofame/seed", (req, res) => {
-  Fido.deleteMany({}, (error, allFido) => {})
-
-  Fido.create(fidoSeed, (error, data) => {
-    res.redirect("/fidofame")
-  })
-})
-
-// Index
-app.get("/fidofame", (req,res) => {
-    Fido.find({}, (error, allFidos) => {
-        res.render("index.ejs", {
-            fidos: allFidos,
-        })
-    })
-});
-
-// New
-app.get("/fidofame/new", (req, res) => {
-    res.render("new.ejs")
-});
-
-//Delete
-app.delete("/fidofame/:id", (req, res) => {
-    Fido.findByIdAndRemove(req.params.id, (err, data) => {
-        res.redirect("/fidofame")
-    })
-})
-
-// Update
-app.put("/fidofame/:id", (req, res) => {
-    if (req.body.deceased === "on") {
-      req.body.deceased = true
-    } else {
-      req.body.deceased = false
-    }
-    Fido.findByIdAndUpdate(
-        req.params.id,
-        req.body,
-        {
-          new: true,
-        },
-        (error, updatedBook) => {
-            res.redirect(`/fidofame/${req.params.id}`)
-        }
-    )
-})
-
-// Create
-app.post('/fidofame', (req, res) => {
-    req.body.deceased = !!req.body.deceased;
-    Fido.create(req.body, (err, createdFido) => {
-        if (err) {
-            console.log(err);
-            res.send(err);
-        } else {
-            res.redirect('/fidofame');
-        }
-    })
-});
-
-// Edit
-app.get("/fidofame/:id/edit", (req, res) => {
-    Fido.findById(req.params.id, (error, foundFido) => {
-        res.render("edit.ejs", {
-            fido: foundFido,
-        })
-    })
-})
-
-// Show
-app.get("/fidofame/:id", (req, res) => {
-    Fido.findById(req.params.id, (err, foundFido) => {
-        res.render("show.ejs", {
-            fido: foundFido
-        })
-    })
-});
+const fidofameController = require("./controllers/fidofame")
+app.use("/fidofame", fidofameController)
 
 // Database Connection
 mongoose.connect(process.env.DATABASE_URL, {

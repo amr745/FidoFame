@@ -7,13 +7,18 @@
     <title>Famous Dogs</title>
 </head>
 <body>
-    <nav>
+     <nav>
         <a href="/fidofame/new">Add a New Dog</a>
+        <a href="/fidofame/film">Film</a>
+        <a href="/fidofame/tv">TV</a>
+        <a href="/fidofame/cartoon">Cartoon</a>
+        <a href="/fidofame/social">Social Media</a>
+
     </nav>
     <h1>Famous Dogs</h1>
         <% fidos.forEach(fido => { %>
             <div class="Dog">
-                <%=fido.name %>
+                <!-- <%=fido.name %> -->
                 <a href="/fidofame/<%=fido._id; %>">
                     <img class="image" src=<%=fido.image %> alt=<%=fido.name %>>
                 </a>
