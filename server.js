@@ -4,12 +4,13 @@ const mongoose = require("mongoose");
 const Fido = require("./models/fido");
 const app = express();
 require("dotenv").config();
-// const path = require('path')
+const methodOverride = require("method-override")
 
 // Middleware
 // Body parser middleware: give us access to req.body
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
+app.use(methodOverride("_method"))
 
 // Routes / Controllers
 
@@ -38,6 +39,13 @@ app.get("/fidofame/new", (req, res) => {
     res.render("new.ejs")
 });
 
+//Delete
+app.delete("/fidofame/:id", (req, res) => {
+    Fido.findByIdAndRemove(req.params.id, (err, data) => {
+        res.redirect("/fidofame")
+    })
+})
+
 // Create
 app.post('/fidofame', (req, res) => {
     req.body.deceased = !!req.body.deceased;
@@ -50,6 +58,15 @@ app.post('/fidofame', (req, res) => {
         }
     })
 });
+
+// Edit
+app.get("/fidofame/:id/edit", (req, res) => {
+    Fido.findById(req.params.id, (error, foundFido) => {
+        res.render("edit.ejs", {
+            fido: foundFido,
+        })
+    })
+})
 
 // Show
 app.get("/fidofame/:id", (req, res) => {

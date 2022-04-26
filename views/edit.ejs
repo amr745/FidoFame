@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Famous Dogs</title>
+</head>
+<body>
+    <h1>Edit <%=fido.name%></h1>
+    <form action="">
+        Name: <input type="text" name="name" value="<%=fido.name%>" /><br />
+		Image: <input type="text" name="image" value="<%=fido.image%>"  /><br />
+		Breed: <input type="text" name="breed"value="<%=fido.breed%>"  /><br />
+        <label for="renown">Claim To Fame:</label>
+        <select id="renown" name="renown" value="<%=fido.renown%>" >
+            <option value="film">Film</option>
+            <option value="tv">TV</option>
+            <option value="cartoon">Cartoon</option>
+            <option value="social">Social Media</option>
+        </select><br />
+        <label for="description">Description:</label><br />
+        <textarea id="description" name="description" rows="4" cols="50" ><%=fido.description%></textarea><br />
+        Deceased: <input type="checkbox" name="deceased" <%= fido.deceased && "checked" %>><br />
+        <input type="submit" name="" value="Submit Changes" />
+    </form>
+</body>
+</html>
