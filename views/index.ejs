@@ -8,22 +8,24 @@
     <link rel="stylesheet" href="css/style1.css">
 </head>
 <body>
-     <nav>
-        <a href="/fidofame/new">Add a New Dog</a>
-        <a href="/fidofame/film">Film</a>
-        <a href="/fidofame/tv">TV</a>
-        <a href="/fidofame/cartoon">Cartoon</a>
-        <a href="/fidofame/social">Social Media</a>
-
-    </nav>
-    <h1>Famous Dogs</h1>
+    <header>
+        <h1>Fido Fame</h1>
+        <nav>
+            <a class="navWords" href="/fidofame/film">Film</a>
+            <a class="navWords" href="/fidofame/tv">TV</a>
+            <a class="navWords" href="/fidofame/cartoon">Cartoon</a>
+            <a class="navWords" href="/fidofame/social">Social Media</a>
+            <a class="navWords" href="/fidofame/new">Add a New Dog</a>
+        </nav>
+    </header>
+    <div class="images">
         <% fidos.forEach(fido => { %>
             <div class="Dog">
-                <!-- <%=fido.name %> -->
-                <a href="/fidofame/<%=fido._id; %>">
+                <a  href="/fidofame/<%=fido._id; %>">
                     <img class="image" src=<%=fido.image %> alt=<%=fido.name %>>
                 </a>
             </div>
             <% }) %>
+    </div>
 </body>
 </html>
