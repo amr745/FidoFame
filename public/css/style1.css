@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+
+body {
+    font-family: 'Luckiest Guy', cursive;
+    /* background-image: url("/images/paw.jpg"); */
+    /* background-repeat: no-repeat; */
+    background-color: tan;
+    /* background-size: 300px 100px;; */
+}

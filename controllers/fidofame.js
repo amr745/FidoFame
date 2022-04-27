@@ -23,6 +23,42 @@ fidoRouter.get("/", (req,res) => {
     })
 });
 
+//Film
+fidoRouter.get("/film", (req,res) => {
+    Fido.find({}, (error, allFidos) => {
+         res.render("film.ejs", {
+             fidos: allFidos,
+        })
+    })
+});
+
+//TV
+fidoRouter.get("/tv", (req,res) => {
+    Fido.find({}, (error, allFidos) => {
+         res.render("tv.ejs", {
+             fidos: allFidos,
+        })
+    })
+});
+
+//Cartoon
+fidoRouter.get("/cartoon", (req,res) => {
+    Fido.find({}, (error, allFidos) => {
+         res.render("cartoon.ejs", {
+             fidos: allFidos,
+        })
+    })
+});
+
+//Social Media
+fidoRouter.get("/social", (req,res) => {
+    Fido.find({}, (error, allFidos) => {
+         res.render("social.ejs", {
+             fidos: allFidos,
+        })
+    })
+});
+
 // New
 fidoRouter.get("/new", (req, res) => {
     res.render("new.ejs")
@@ -72,42 +108,6 @@ fidoRouter.get("/:id/edit", (req, res) => {
     Fido.findById(req.params.id, (error, foundFido) => {
         res.render("edit.ejs", {
             fido: foundFido,
-        })
-    })
-});
-
- //Film
- fidoRouter.get("/film", (req,res) => {
-    Fido.find({}, (error, allFidos) => {
-         res.render("film.ejs", {
-             fidos: allFidos,
-        })
-    })
-});
-
-//TV
-fidoRouter.get("/tv", (req,res) => {
-    Fido.find({}, (error, allFidos) => {
-         res.render("tv.ejs", {
-             fidos: allFidos,
-        })
-    })
-});
-
-//Cartoon
-fidoRouter.get("/cartoon", (req,res) => {
-    Fido.find({}, (error, allFidos) => {
-         res.render("cartoon.ejs", {
-             fidos: allFidos,
-        })
-    })
-});
-
-//Social Media
-fidoRouter.get("/social", (req,res) => {
-    Fido.find({}, (error, allFidos) => {
-         res.render("social.ejs", {
-             fidos: allFidos,
         })
     })
 });
