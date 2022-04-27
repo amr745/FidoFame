@@ -25,7 +25,7 @@ module.exports = [
     },
     {
       name: "Moose",
-      image: "/images/moose.jpg",
+      image: "/images/Moose.jpg",
       breed: "Jack Russell Terrier",
       renown: "TV",
       description: "(December 24, 1990 – June 22, 2006) was a wire-hair Jack Russell Terrier[4] who portrayed Eddie Crane on the American television sitcom Frasier.",
