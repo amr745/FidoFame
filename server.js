@@ -15,6 +15,10 @@ app.use(methodOverride("_method"))
 const fidofameController = require("./controllers/fidofame")
 app.use("/fidofame", fidofameController)
 
+app.get("/", (req,res) => {
+    res.redirect('/fidofame')
+});
+
 // Database Connection
 mongoose.connect(process.env.DATABASE_URL, {
     useNewUrlParser: true,
