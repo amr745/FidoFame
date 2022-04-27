@@ -121,4 +121,8 @@ fidoRouter.get("/:id", (req, res) => {
     })
 });
 
+fidoRouter.get("/", (req,res) => {
+    res.redirect('/fidofame')
+});
+
 module.exports = fidoRouter
