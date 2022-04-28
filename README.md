@@ -1,5 +1,23 @@
 # FidoFame
 
+A full CRUD application that displays information about Famous Dogs  using the MongoDB.
+
+## Technologies Used
+
+javascript
+HTML5
+CSS
+
+## Libraries
+body-parser
+dotenv
+ejs
+express
+materialize-css
+method-override
+mongoose
+nodemon
+
 ##Routes
 
 | Verb        | Path          | Action  | Used for    |
@@ -17,8 +35,27 @@
 | ----------- | -----------   | --------| ----------- | ----------- | ----------- |
 | ex: Terry | data:image/jpeg | Cairn Terrier | film | In the Wizard of Oz | True
 
-##Libraries Used
-express
-ejs
-method-override
-nodemon
+## Wireframes
+
+![](public/images/HomeWire.png)
+
+![](public/images/showPage.png)
+
+## Screenshots
+
+![](public/images/HomeScreen.png)
+
+![](public/images/groups.png)
+
+![](public/images/show.png)
+
+
+## Getting Started
+
+https://fidofame.herokuapp.com/fidofame
+
+## Next Steps
+
+- More dog categories ex. Show Dogs
+- Better css on Home Page
+- Media Queries to Work with Phones

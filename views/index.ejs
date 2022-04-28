@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Famous Dogs</title>
     <link rel="stylesheet" href="/css/style1.css">
-    <!-- <link rel="stylesheet" href="/css/materialize.css"> -->
+    <link rel="stylesheet" href="/css/materialize.css">
+
 </head>
+<div class="container">
 <body>
     <header>
         <h1>Fido Fame</h1>
@@ -21,12 +23,13 @@
     </header>
     <div class="images">
         <% fidos.forEach(fido => { %>
-            <div class="Dog">
+            <div class="dog">
                 <a  href="/fidofame/<%=fido._id; %>">
                     <img class="image" src=<%=fido.image %> alt=<%=fido.name %>>
                 </a>
             </div>
             <% }) %>
     </div>
+</div>
 </body>
 </html>
