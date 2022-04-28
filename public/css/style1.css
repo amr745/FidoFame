@@ -15,6 +15,7 @@ h1 {
     padding: 100px;
     margin-top: 0%;
     margin-bottom: 0px;
+    width: 100%;
     /* display: grid; */
 }
 
@@ -48,9 +49,3 @@ nav {
     grid-template-columns: auto auto auto auto;
     gap: 10%;
 }
-
-/* image {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    gap: 20px;
-} */

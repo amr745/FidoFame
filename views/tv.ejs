@@ -5,15 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fido Fame</title>
+    <link rel="stylesheet" href="/css/groups.css">
+    <link rel="stylesheet" href="/css/materialize.css">
 </head>
 <body>
   <nav>
-    <a href="/fidofame">Back to Famous Dogs</a>
+    <a class="nav" href="/fidofame">Back to Famous Dogs</a>
 </nav>
     <h1>TV Dogs</h1>
     <% fidos.forEach(fido => { %>
         <% if (fido.renown === "TV") { %>
-          <%= fido.name %>
+          <h3><%= fido.name %></h3>
           <a href="/fidofame/<%= fido._id %>">
             <img class="image" src="<%= fido.image %>" alt="<%= fido.name %>" />
           </a>

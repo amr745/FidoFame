@@ -5,21 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/css/show.css">
+    <link rel="stylesheet" href="/css/materialize.css">
+
 </head>
 <body>
+    <div class="container">
     <nav>
         <a href="/fidofame">Back to Famous Dogs</a>
     </nav>
     <h1><%=fido.name %></h1>
     <img src="<%=fido.image %>" alt="<%=fido.name %> Image"><br />
     Breed: <%= fido.breed%> <br />
-    Renown: <%= fido.renown%> <br />
-    Description: <%= fido.description%> <br />
+    Claim To Fame: <%= fido.renown%> <br />
+        <p>Description: <%= fido.description%></p><br />
     <form action="/fidofame/<%= fido.id %>?_method=DELETE" method="POST">
         <input type="submit" value="DELETE" />
     </form>
     <a href="/fidofame/<%=fido._id %>/edit">
         <button>Edit</button>
     </a>
+</div>
 </body>
 </html>

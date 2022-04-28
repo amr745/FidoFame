@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+
+.nav {
+    color: #f1f1f1;
+}
+
+body {
+    font-family: 'Luckiest Guy', cursive;
+    background-color: tan;
+    color: PURPLE;
+    text-align: center;
+}
+
+images {
+    display: inline-block;
+}
