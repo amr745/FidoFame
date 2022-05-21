@@ -7,8 +7,8 @@ const Fido = require("../models/fido");
 // Seed
 const fidoSeed = require("../models/fidoSeed.js")
 fidoRouter.get("/seed", (req, res) => {
-  Fido.deleteMany({}, (error, allFido) => {})
-
+  Fido.deleteMany({}, (error, allFido) => {
+})
   Fido.create(fidoSeed, (error, data) => {
     res.redirect("/fidofame")
   })
@@ -84,7 +84,7 @@ fidoRouter.put("/:id", (req, res) => {
         {
           new: true,
         },
-        (error, updatedBook) => {
+        (error, updatedFido) => {
             res.redirect(`/fidofame/${req.params.id}`)
         }
     )
