@@ -5,22 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Famous Dogs</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="/css/style1.css">
-    <link rel="stylesheet" href="/css/materialize.css">
-
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
-<div class="container">
-<body>
+    <h1><a class="pink-text text-darken-4" href="/fidofame/">Fido Fame</a></h1>
+<body class="#9F7E69">
     <header>
-        <h1>Fido Fame</h1>
-        <nav>
-            <a class="navWords" href="/fidofame/film">Film</a>
-            <a class="navWords" href="/fidofame/tv">TV</a>
-            <a class="navWords" href="/fidofame/cartoon">Cartoon</a>
-            <a class="navWords" href="/fidofame/social">Social Media</a>
-            <a class="navWords" href="/fidofame/new">Add a New Dog</a>
-        </nav>
-    </header>
+        <nav class="blue-grey darken-4">
+            <div class="nav-wrapper">
+              <ul>
+                <li>
+                  <a href="" class="sidenav-trigger" data-target="mobile-links">
+                    <i class="material-icons">menu</i>
+                  </a>
+                </li>
+              </ul>
+              <ul class="right hide-on-med-and-down">
+                <li><a href="/fidofame/tv">TV Dogs</a></li>
+                <li><a href="/fidofame/cartoon">Cartoon Dogs</a></li>
+                <li><a href="/fidofame/social">Social Media Dogs</a></li>
+                <li><a href="/fidofame/new">Add a New Dog</a></li>
+              </ul>
+            </div>
+          </nav>
+          <ul class="sidenav" id="mobile-links">
+            <li><a href="/fidofame/tv">TV Dogs</a></li>
+                <li><a href="/fidofame/cartoon">Cartoon Dogs</a></li>
+                <li><a href="/fidofame/social">Social Media Dogs</a></li>
+                <li><a href="/fidofame/new">Add a New Dog</a></li>
+          </ul>
+          <a href="" data-activates="sidenav" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+        </header>
     <div class="images">
         <% fidos.forEach(fido => { %>
             <div class="dog">
@@ -30,6 +48,19 @@
             </div>
             <% }) %>
     </div>
-</div>
+    <script>
+        $(document).ready(function(){
+        $('.sidenav').sidenav();
+      });
+    
+    function initialize() {
+      $('.button-collapse').sideNav();
+      $('.button-collapse').click(removeOverlay);
+    }
+    
+    function removeOverlay() {
+      $('div[id^=sidenav-overlay]').remove();
+    }
+      </script>
 </body>
 </html>
