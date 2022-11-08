@@ -1,17 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
 
 a {
-    color: #e1e4e6;
+    color: #273E47;
 }
 
 body {
     font-family: 'Luckiest Guy', cursive;
-    background-color: #cea8ff;
-    color: #360aad;
+    background-color: #9F7E69;
+    color: #7D1538;
 }
 
 input[type=submit] {
-    background-color: #360aad;
+    background-color: #273E47;
     border: none;
     color: #e1e4e6;
     padding: 16px 32px;
@@ -22,7 +22,7 @@ input[type=submit] {
   }
 
   button {
-    background-color: #360aad;
+    background-color: #273E47;
     border: none;
     color: #e1e4e6;
     padding: 16px 32px;
