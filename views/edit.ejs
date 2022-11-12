@@ -10,32 +10,27 @@
     <link rel="stylesheet" href="/css/edit.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <!-- <link rel="stylesheet" href="/css/materialize.css"> -->
-
 </head>
 <body>
-    <!-- <nav> -->
-        <a href="/fidofame">Back to Famous Dogs</a>
-    <!-- </nav> -->
+    <a href="/fidofame">Back to Famous Dogs</a>
     <h1>Edit <%=fido.name%></h1>
-
     <div class="row">
         <form class="col s12" action="/fidofame/<%=fido._id%>?_method=PUT" method="POST">
           <div class="row">
             <div class="input-field col s12">
-              <input type="text" value="<%=fido.name%>" id="name" class="validate">
+              <input type="text" value="<%=fido.name%>" name="name" class="validate">
               <label for="name">Name</label>
             </div>
             <div class="input-field col s12">
-              <input id="image" type="text" value="<%=fido.image%>" class="validate">
+              <input name="image" type="text" value="<%=fido.image%>" class="validate">
               <label for="image">Image</label>
             </div>
             <div class="input-field col s12">
-                <input id="breed" type="text" value="<%=fido.breed%>" class="validate">
+                <input name="breed" type="text" value="<%=fido.breed%>" class="validate">
                 <label for="breed">Breed</label>
             </div>
             <div class="input-field col s12">
-                <select>
+                <select name="renown">
                     <option value="<%=fido.renown%>" disabled selected><%=fido.renown%></option>
                     <option value="Film">Film</option>
                     <option value="TV">TV</option>
@@ -45,48 +40,28 @@
                 <label>Claim to Fame</label>
             </div>
             <div class="input-field col s12">
-                <textarea id="description" class="materialize-textarea"><%=fido.description%></textarea>
+                <textarea name="description" class="materialize-textarea"><%=fido.description%></textarea>
                 <label for="description">Description</label>
             </div>
             <p>
                 <label>
-                    <input type="checkbox" id="deceased" class="filled-in" <%= fido.deceased && "checked" %> />
+                    <input type="checkbox" name="deceased" class="filled-in" <%= fido.deceased && "checked" %> />
                     <span>Deceased</span>
                 </label>
             </p>
-        </div>
-        <button type="submit" id="" class="btn waves-effect waves-light">Submit Changes
-            <i class="material-icons right">send</i>
-        </button>
-    </form>
-</div>
-        <!-- <input type="submit" name="" value="Submit Changes" /> -->
-    
-    
-    <!-- <form action="/fidofame/<%=fido._id%>?_method=PUT" method="POST">
-        Name: <input type="text" name="name" value="<%=fido.name%>" /><br />
-		Image: <input type="text" name="image" value="<%=fido.image%>"  /><br />
-		Breed: <input type="text" name="breed"value="<%=fido.breed%>"  /><br />
-        <label for="renown">Claim To Fame:</label>
-        <select id="renown" name="renown" value="<%=fido.renown%>" >
-            <option value="Film">Film</option>
-            <option value="TV">TV</option>
-            <option value="Cartoon">Cartoon</option>
-            <option value="Social Media">Social Media</option>
-        </select><br />
-        <label for="description">Description:</label><br />
-        <textarea id="description" name="description" rows="4" cols="50" ><%=fido.description%></textarea><br />
-        Deceased: <input type="checkbox" name="deceased" <%= fido.deceased && "checked" %>><br />
-        <input type="submit" name="" value="Submit Changes" />
-    </form> -->
-    
+            <button type="submit" id="" class="btn waves-effect waves-light">Submit Changes
+                <i class="material-icons right">send</i>
+            </button>
+            </div>
+        </form>
+    </div>
     <script>
-    $(document).ready(function() {
-        $('input#input_text, textarea#textarea2').characterCounter();
-    });
-    
     $(document).ready(function(){
         $('select').formSelect();
+    });
+    
+    $(document).ready(function() {
+        $('input#input_text, textarea#textarea2').characterCounter();
     });
     
     </script>
