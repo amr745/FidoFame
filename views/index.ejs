@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
-    <h1><a class="pink-text text-darken-4" href="/fidofame/">Fido Fame</a></h1>
+    <h1 class="text-align:center"><a class="pink-text text-darken-4" href="/fidofame/">Fido Fame</a></h1>
 <body class="#9F7E69">
     <header>
         <nav class="blue-grey darken-4">
@@ -39,15 +39,17 @@
           </ul>
           <a href="" data-activates="sidenav" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
         </header>
+    <div class="container">
     <div class="images">
         <% fidos.forEach(fido => { %>
-            <div class="dog">
+            <div class="dog stacked">
                 <a  href="/fidofame/<%=fido._id; %>">
                     <img class="image" src=<%=fido.image %> alt=<%=fido.name %>>
                 </a>
             </div>
             <% }) %>
     </div>
+  </div>
     <script>
         $(document).ready(function(){
         $('.sidenav').sidenav();
