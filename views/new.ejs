@@ -5,10 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fido Fame</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="/css/edit.css">
-    <!-- <link rel="stylesheet" href="/css/materialize.css"> -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
-<body>
+<!-- <body>
     <nav>
         <a href="/fidofame">Back to Famous Dogs</a>
     </nav>
@@ -29,5 +32,61 @@
             Deceased: <input type="checkbox" name="deceased" /><br />
             <input type="submit" name="" value="Add Dog" />
 	    </form>
+</body> -->
+
+<body>
+    <a href="/fidofame">Back to Famous Dogs</a>
+    <h1>New Famous Dog</h1>
+    <div class="row">
+        <form class="col s12"  action="/fidofame" method="POST">
+          <div class="row">
+            <div class="input-field col s12">
+              <input type="text" name="name">
+              <label for="name">Name</label>
+            </div>
+            <div class="input-field col s12">
+              <input name="image" type="text">
+              <label for="image">Image</label>
+            </div>
+            <div class="input-field col s12">
+                <input name="breed" type="text">
+                <label for="breed">Breed</label>
+            </div>
+            <div class="input-field col s12">
+                <select name="renown">
+                    <option></option>
+                    <option value="Film">Film</option>
+                    <option value="TV">TV</option>
+                    <option value="Cartoon">Cartoon</option>
+                    <option value="Social Media">Social Media</option>
+                </select>
+                <label>Claim to Fame</label>
+            </div>
+            <div class="input-field col s12">
+                <textarea name="description" class="materialize-textarea"></textarea>
+                <label for="description">Description</label>
+            </div>
+            <p>
+                <label>
+                    <input type="checkbox" name="deceased" class="filled-in" />
+                    <span>Deceased</span>
+                </label>
+            </p>
+            <button type="submit" id="" class="btn waves-effect waves-light">Submit
+                <i class="material-icons right">send</i>
+            </button>
+            </div>
+        </form>
+    </div>
+    <script>
+    $(document).ready(function(){
+        $('select').formSelect();
+    });
+    
+    $(document).ready(function() {
+        $('input#input_text, textarea#textarea2').characterCounter();
+    });
+    
+    </script>
 </body>
 </html>
