@@ -51,3 +51,18 @@ input[type=submit] {
     cursor: pointer;
     border-radius: 4px;
   }
+
+  /* label color */
+  .input-field label {
+    color: #273E47;
+  }
+  /* label focus color */
+  .input-field input[type=text]:focus + label, .materialize-textarea:focus:not([readonly]) + label {
+    color: #273E47 !important;
+   }
+
+/* label underline focus color */
+   .input-field input[type=text]:focus, .materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #273E47 !important;
+    box-shadow: 0 1px 0 0 #273E47 !important;
+   }
