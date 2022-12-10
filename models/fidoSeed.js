@@ -1,5 +1,13 @@
 module.exports = [
     {
+      name: "Scooby-Doo",
+      image: "/images/Scoob.jpg",
+      breed: "Great Dane",
+      renown: "Cartoon",
+      description: "One of Hanna-Barbera's most iconic characters, debuting in 1969 in Scooby Doo Where Are You! His name comes from scat lyrics at the end of Frank Sinatra's song 'Strangers in the Night'. In designing the character, Iwao Takamoto studied Great Danes and then gave Scooby the opposite traits.",
+      deceased: false,
+    },
+    {
       name: "Terry",
       image: "/images/Terry.jpg",
       breed: "Cairn Terrier",
@@ -53,14 +61,6 @@ module.exports = [
       breed: "Pomeranian",
       renown: "Social Media",
       description: "Jiff Pom, a Pomeranian pup, is the most followed dog on all of Instagram with 9.9M followers. Jiff Pom has continued building his widespread online popularity as a top TikTok influencer with 20.8 million followers.",
-      deceased: false,
-    },
-    {
-      name: "Scooby-Doo",
-      image: "/images/Scoob.jpg",
-      breed: "Great Dane",
-      renown: "Cartoon",
-      description: "One of Hanna-Barbera's most iconic characters, debuting in 1969 in Scooby Doo Where Are You! His name comes from scat lyrics at the end of Frank Sinatra's song 'Strangers in the Night'. In designing the character, Iwao Takamoto studied Great Danes and then gave Scooby the opposite traits.",
       deceased: false,
     },
   ]
