@@ -55,3 +55,7 @@ h1 {
     aspect-ratio: 1 / 1.25;
     object-fit: cover;
 }
+
+h3 {
+    text-align: center;
+}
