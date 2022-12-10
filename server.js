@@ -1,5 +1,6 @@
 // Dependencies
 const express = require("express");
+var ejs = require('ejs');
 const mongoose = require("mongoose");
 const methodOverride = require("method-override");
 const app = express();
