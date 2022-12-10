@@ -19,6 +19,10 @@ app.get("/", (req,res) => {
     res.redirect('/fidofame')
 });
 
+app.set('view engine','ejs'); 
+
+app.engine('ejs', require('ejs').__express);
+
 // Database Connection
 mongoose.set('strictQuery', true);
 
