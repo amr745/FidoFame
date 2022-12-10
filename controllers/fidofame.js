@@ -5,14 +5,14 @@ const Fido = require("../models/fido");
 
 // Routes / Controllers
 // Seed
-// const fidoSeed = require("../models/fidoSeed.js")
-// fidoRouter.get("/seed", (req, res) => {
-//   Fido.deleteMany({}, (error, allFido) => {
-// })
-//   Fido.create(fidoSeed, (error, data) => {
-//     res.redirect("/fidofame")
-//   })
-// });
+const fidoSeed = require("../models/fidoSeed.js")
+fidoRouter.get("/seed", (req, res) => {
+  Fido.deleteMany({}, (error, allFido) => {
+})
+  Fido.create(fidoSeed, (error, data) => {
+    res.redirect("/fidofame")
+  })
+});
 
 // Index
 fidoRouter.get("/", (req,res) => {
