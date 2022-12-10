@@ -1,6 +1,5 @@
 // Dependencies
 const express = require("express");
-var ejs = require('ejs');
 const mongoose = require("mongoose");
 const methodOverride = require("method-override");
 const app = express();
@@ -19,10 +18,6 @@ app.use("/fidofame", fidofameController)
 app.get("/", (req,res) => {
     res.redirect('/fidofame')
 });
-
-// app.set('view engine','ejs'); 
-
-// app.engine('ejs', require('ejs').__express);
 
 // Database Connection
 mongoose.set('strictQuery', true);
