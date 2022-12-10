@@ -15,9 +15,13 @@
         <a href="/fidofame">Back to Famous Dogs</a>
     </nav>
     <h1><%=fido.name%></h1>
-    <img src="<%=fido.image %>" alt="<%=fido.name %> Image"><br />
-    Breed: <%= fido.breed%> <br />
-    Claim To Fame: <%= fido.renown%> <br />
+    <div class="pic">
+        <img src="<%=fido.image %>" alt="<%=fido.name %> Image"><br />
+    </div>
+    <div class="info">
+        Breed: <%= fido.breed%> <br />
+        Claim To Fame: <%= fido.renown%> <br />
+    </div>
         <p>Description: <%= fido.description%></p><br />
     <form action="/fidofame/<%= fido.id %>?_method=DELETE" method="POST">
         <button type="submit" value="DELETE" />Delete</button>

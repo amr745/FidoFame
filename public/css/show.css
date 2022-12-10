@@ -8,6 +8,7 @@ body {
     font-family: 'Luckiest Guy', cursive;
     background-color: #9F7E69;
     color: #7D1538;
+    position: relative;
 }
 
 input[type=submit] {
@@ -31,3 +32,61 @@ input[type=submit] {
     cursor: pointer;
     border-radius: 4px;
   }
+
+h1, nav {
+  font-size: 25pt;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  border: transparent;
+}
+
+.pic {
+  /* height: 200px; */
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  border: transparent;
+  /* padding: 25pt; */
+}
+
+.pic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden
+}
+.pic img {
+  flex-shrink: 0;
+  min-width: 50%;
+  min-height: 50%
+}
+
+p, .info {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  border: transparent;
+  margin: 20px
+}
+
+@media (max-width: 500px){
+  h1{
+  font-size: 30pt;
+  }
+  h2{
+    font-size: 15pt
+  }
+}
