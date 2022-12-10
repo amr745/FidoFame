@@ -20,6 +20,8 @@ app.get("/", (req,res) => {
 });
 
 // Database Connection
+mongoose.set('strictQuery', true);
+
 mongoose.connect(process.env.DATABASE_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
